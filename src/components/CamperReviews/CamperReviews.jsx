@@ -3,14 +3,14 @@ import icons from '../../assets/icons.svg';
 import CamperForm from '../CamperForm/CamperForm.jsx';
 import style from './CamperReviews.module.css';
 import {
-  selectCampers,
+  selectCurrentCamper,
   selectError,
   selectLoading,
 } from '../../redux/campers/selectors.js';
 import Loader from '../Loader/Loader.jsx';
 
 const CamperReviews = () => {
-  const camper = useSelector(selectCampers);
+  const camper = useSelector(selectCurrentCamper);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 

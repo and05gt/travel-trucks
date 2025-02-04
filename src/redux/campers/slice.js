@@ -5,6 +5,7 @@ const initialState = {
   campers: [],
   loading: false,
   error: false,
+  currentCamper: {},
 };
 
 const slice = createSlice({
@@ -16,7 +17,7 @@ const slice = createSlice({
         state.campers = action.payload;
       })
       .addCase(getCamperById.fulfilled, (state, action) => {
-        state.campers = action.payload;
+        state.currentCamper = action.payload;
       })
       .addMatcher(
         isAnyOf(fetchCampers.pending, getCamperById.pending),

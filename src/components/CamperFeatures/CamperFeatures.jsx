@@ -2,7 +2,7 @@ import CamperForm from '../CamperForm/CamperForm.jsx';
 import style from './CamperFeatures.module.css';
 import { useSelector } from 'react-redux';
 import {
-  selectCampers,
+  selectCurrentCamper,
   selectError,
   selectLoading,
 } from '../../redux/campers/selectors.js';
@@ -10,7 +10,7 @@ import Loader from '../Loader/Loader.jsx';
 import Badges from '../Badges/Badges.jsx';
 
 const CamperFeatures = () => {
-  const camper = useSelector(selectCampers);
+  const camper = useSelector(selectCurrentCamper);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 

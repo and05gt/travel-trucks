@@ -5,7 +5,7 @@ import { Suspense, useEffect } from 'react';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCamperById } from '../../redux/campers/operations.js';
-import { selectCampers } from '../../redux/campers/selectors.js';
+import { selectCurrentCamper } from '../../redux/campers/selectors.js';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(style.link, isActive && style.active);
@@ -13,7 +13,7 @@ const buildLinkClass = ({ isActive }) => {
 
 const CamperPage = () => {
   const { id } = useParams();
-  const camper = useSelector(selectCampers);
+  const camper = useSelector(selectCurrentCamper);
   const dispatch = useDispatch();
 
   useEffect(() => {
