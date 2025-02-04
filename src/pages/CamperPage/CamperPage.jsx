@@ -17,8 +17,6 @@ const CamperPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!id) return;
-
     dispatch(getCamperById(id));
   }, [dispatch, id]);
 
