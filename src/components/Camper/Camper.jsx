@@ -45,7 +45,11 @@ const Camper = ({ camper }) => {
         </div>
         <p className={style.camperText}>{camper.description}</p>
         <Badges camper={camper} />
-        <Link className={style.showMoreBtn} to={`/catalog/${camper.id}`}>
+        <Link
+          className={style.showMoreBtn}
+          to={`/catalog/${camper.id}`}
+          target="_blank"
+        >
           Show more
         </Link>
       </div>
