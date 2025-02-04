@@ -5,7 +5,12 @@ import { Suspense, useEffect } from 'react';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCamperById } from '../../redux/campers/operations.js';
-import { selectCurrentCamper } from '../../redux/campers/selectors.js';
+import {
+  selectCurrentCamper,
+  selectError,
+  selectLoading,
+} from '../../redux/campers/selectors.js';
+import Loader from '../../components/Loader/Loader.jsx';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(style.link, isActive && style.active);
@@ -14,6 +19,8 @@ const buildLinkClass = ({ isActive }) => {
 const CamperPage = () => {
   const { id } = useParams();
   const camper = useSelector(selectCurrentCamper);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,6 +34,8 @@ const CamperPage = () => {
   return (
     <div className={style.camperContainer}>
       <section className={style.camperSection}>
+        {loading && <Loader />}
+        {error && <h2>{error}</h2>}
         <h2 className={style.camperTitle}>{camper.name}</h2>
         <div className={style.detailsContainer}>
           <div className={style.reviewsWrapper}>
