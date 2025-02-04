@@ -1,0 +1,56 @@
+.featuresContainer {
+  display: flex;
+  gap: 40px;
+}
+
+.featuresSection {
+  display: flex;
+  width: 631px;
+  padding: 44px 52px;
+  flex-direction: column;
+  gap: 100px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+}
+
+.featuresBadgesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.featuresBadgesItem {
+  display: flex;
+  height: 48px;
+  padding: 12px 18px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  background-color: #f2f4f7;
+  mix-blend-mode: multiply;
+  text-transform: capitalize;
+}
+
+.featuresSubtitle {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dadde1;
+  margin-bottom: 24px;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoTextForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoText {
+  display: flex;
+  justify-content: space-between;
+}

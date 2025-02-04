@@ -1,0 +1,11 @@
+.catalogContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.catalogSection {
+  padding: 48px 64px 52px;
+  display: flex;
+  gap: 64px;
+}
