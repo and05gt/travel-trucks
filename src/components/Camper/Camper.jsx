@@ -2,9 +2,20 @@ import { Link } from 'react-router-dom';
 import icons from '../../assets/icons.svg';
 import style from './Camper.module.css';
 import Badges from '../Badges/Badges.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from '../../redux/campers/selectors.js';
+import { toggleFavorite } from '../../redux/campers/slice.js';
 
 const Camper = ({ camper }) => {
   const { gallery } = camper;
+  const favorites = useSelector(selectFavorites);
+  const dispatch = useDispatch();
+
+  const isFavorite = favorites.some((favorite) => favorite.id === camper.id);
+
+  const handleChangeFavorite = () => {
+    dispatch(toggleFavorite(camper));
+  };
 
   return (
     <div className={style.camperWrapper}>
@@ -19,10 +30,20 @@ const Camper = ({ camper }) => {
             <h2 className={style.camperTitle}>{camper.name}</h2>
             <div className={style.camperTitleWrap}>
               <h2 className={style.camperTitle}>€{camper.price}</h2>
-              <button className={style.heartBtn} type="button">
-                <svg width={26} height={24}>
-                  <use href={icons + '#heart_default'}></use>
-                </svg>
+              <button
+                className={style.heartBtn}
+                type="button"
+                onClick={handleChangeFavorite}
+              >
+                {isFavorite ? (
+                  <svg width={26} height={24}>
+                    <use href={icons + '#heart_pressed'}></use>
+                  </svg>
+                ) : (
+                  <svg width={26} height={24}>
+                    <use href={icons + '#heart_default'}></use>
+                  </svg>
+                )}
               </button>
             </div>
           </div>

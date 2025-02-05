@@ -6,11 +6,25 @@ const initialState = {
   loading: false,
   error: false,
   currentCamper: {},
+  favorites: [],
 };
 
 const slice = createSlice({
   name: 'campers',
   initialState,
+  reducers: {
+    toggleFavorite: (state, action) => {
+      const index = state.favorites.findIndex(
+        (favorite) => favorite.id === action.payload.id,
+      );
+
+      if (index > -1) {
+        state.favorites.splice(index, 1);
+      } else {
+        state.favorites.push(action.payload);
+      }
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.fulfilled, (state, action) => {
@@ -41,4 +55,5 @@ const slice = createSlice({
   },
 });
 
+export const { toggleFavorite } = slice.actions;
 export const campersReducer = slice.reducer;
