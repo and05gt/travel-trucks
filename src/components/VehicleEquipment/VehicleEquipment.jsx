@@ -61,7 +61,7 @@ const VehicleEquipment = () => {
                   name="equipment"
                   value={equipment}
                   checked={vehicleEquipment[equipment]}
-                  onChange={handleChangeEquipment}
+                  onClick={handleChangeEquipment}
                 />
                 <svg className={style.equipmentSvg} width={32} height={32}>
                   <use href={getIcon(equipment)}></use>
