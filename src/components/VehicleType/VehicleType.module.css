@@ -39,10 +39,23 @@
   inline-size: 100%;
 }
 
-.typeItem:has(> .typeInput:checked) {
+.typeItemChecked {
+  position: relative;
+  width: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 10px;
   border: 1px solid #e44848;
+  text-align: center;
+  mix-blend-mode: multiply;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.typeItem:nth-child(2) {
+.typeItem:nth-child(2),
+.typeItemChecked:nth-child(2) {
   padding: 4px 16px;
 }

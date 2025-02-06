@@ -17,7 +17,13 @@ const VehicleType = () => {
       <h3 className={style.typeSubtitle}>Vehicle type</h3>
       <div className={style.typeWrapper}>
         <ul className={style.typeList}>
-          <li className={style.typeItem}>
+          <li
+            className={
+              vehicleType === 'panelTruck'
+                ? style.typeItemChecked
+                : style.typeItem
+            }
+          >
             <input
               className={style.typeInput}
               type="radio"
@@ -31,7 +37,13 @@ const VehicleType = () => {
             </svg>
             Van
           </li>
-          <li className={style.typeItem}>
+          <li
+            className={
+              vehicleType === 'fullyIntegrated'
+                ? style.typeItemChecked
+                : style.typeItem
+            }
+          >
             <input
               className={style.typeInput}
               type="radio"
@@ -45,7 +57,11 @@ const VehicleType = () => {
             </svg>
             Fully Integrated
           </li>
-          <li className={style.typeItem}>
+          <li
+            className={
+              vehicleType === 'alcove' ? style.typeItemChecked : style.typeItem
+            }
+          >
             <input
               className={style.typeInput}
               type="radio"

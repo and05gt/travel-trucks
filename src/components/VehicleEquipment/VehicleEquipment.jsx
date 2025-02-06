@@ -58,7 +58,7 @@ const VehicleEquipment = () => {
                 key={equipment}
                 className={
                   vehicleEquipment[equipment] === true
-                    ? style.active
+                    ? style.equipmentItemChecked
                     : style.equipmentItem
                 }
               >
