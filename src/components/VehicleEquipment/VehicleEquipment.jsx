@@ -54,14 +54,21 @@ const VehicleEquipment = () => {
         <ul className={style.equipmentList}>
           {Object.keys(vehicleEquipment).map((equipment) => {
             return (
-              <li key={equipment} className={style.equipmentItem}>
+              <li
+                key={equipment}
+                className={
+                  vehicleEquipment[equipment] === true
+                    ? style.active
+                    : style.equipmentItem
+                }
+              >
                 <input
                   className={style.equipmentInput}
                   type="checkbox"
                   name="equipment"
                   value={equipment}
                   checked={vehicleEquipment[equipment]}
-                  onClick={handleChangeEquipment}
+                  onChange={handleChangeEquipment}
                 />
                 <svg className={style.equipmentSvg} width={32} height={32}>
                   <use href={getIcon(equipment)}></use>

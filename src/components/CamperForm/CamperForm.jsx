@@ -31,18 +31,21 @@ const CamperForm = () => {
           type="text"
           name="name"
           placeholder="Name*"
+          required
         />
         <input
           className={style.formInput}
           type="email"
           name="email"
           placeholder="Email*"
+          required
         />
         <input
           className={style.formInput}
           type="text"
           name="text"
           placeholder="Booking date*"
+          required
         />
         <textarea
           className={style.formComment}
