@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Layout from './components/Layout.jsx';
 import CamperFeatures from './components/CamperFeatures/CamperFeatures.jsx';
 import CamperReviews from './components/CamperReviews/CamperReviews.jsx';
