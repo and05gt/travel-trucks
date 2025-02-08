@@ -6,6 +6,8 @@
 
 .camperSection {
   padding: 48px 64px 80px;
+  display: flex;
+  flex-direction: column;
 }
 
 .camperTitle {
@@ -92,13 +94,21 @@
   margin-bottom: 44px;
 }
 
-.link {
+.tabBtn,
+.active {
   position: relative;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
   padding-bottom: 24px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
   color: #101828;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: block;
 }
 
 .active::after {
@@ -108,5 +118,4 @@
   bottom: -2.5px;
   width: 100%;
   border-bottom: 5px solid #e44848;
-  display: block;
 }

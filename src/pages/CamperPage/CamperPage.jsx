@@ -1,8 +1,6 @@
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import icons from '../../assets/icons.svg';
-import style from './CamperPage.module.css';
-import { Suspense, useEffect } from 'react';
-import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCamperById } from '../../redux/campers/operations.js';
 import {
@@ -11,10 +9,9 @@ import {
   selectLoading,
 } from '../../redux/campers/selectors.js';
 import Loader from '../../components/Loader/Loader.jsx';
-
-const buildLinkClass = ({ isActive }) => {
-  return clsx(style.link, isActive && style.active);
-};
+import CamperReviews from '../../components/CamperReviews/CamperReviews.jsx';
+import CamperFeatures from '../../components/CamperFeatures/CamperFeatures.jsx';
+import style from './CamperPage.module.css';
 
 const CamperPage = () => {
   const { id } = useParams();
@@ -22,14 +19,19 @@ const CamperPage = () => {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
+  const [activeTab, setActiveTab] = useState('features');
 
   useEffect(() => {
     dispatch(getCamperById(id));
   }, [dispatch, id]);
 
+  const handleChangeTab = (tab) => {
+    setActiveTab(tab);
+  };
+
   const { gallery } = camper;
 
-  if (!gallery) return;
+  if (!gallery) return <Loader />;
 
   return (
     <div className={style.camperContainer}>
@@ -53,7 +55,7 @@ const CamperPage = () => {
             <p>{camper.location}</p>
           </div>
         </div>
-        <h2 className={style.camperPrice}>€{camper.price}</h2>
+        <h2 className={style.camperPrice}>€{camper.price}.00</h2>
 
         <ul className={style.camperImageList}>
           {gallery.map((item, index) => {
@@ -72,19 +74,30 @@ const CamperPage = () => {
         </ul>
 
         <p className={style.camperText}>{camper.description}</p>
-        <div>
-          <div className={style.tabsWrapper}>
-            <NavLink className={buildLinkClass} to="features">
-              Features
-            </NavLink>
-            <NavLink className={buildLinkClass} to="reviews">
-              Reviews
-            </NavLink>
-          </div>
+
+        <div className={style.tabsWrapper}>
+          <button
+            className={activeTab === 'features' ? style.active : style.tabBtn}
+            type="button"
+            onClick={() => handleChangeTab('features')}
+          >
+            Features
+          </button>
+          <button
+            className={activeTab === 'reviews' ? style.active : style.tabBtn}
+            type="button"
+            onClick={() => handleChangeTab('reviews')}
+          >
+            Reviews
+          </button>
         </div>
-        <Suspense fallback={null}>
+        <div>
+          {activeTab === 'features' ? <CamperFeatures /> : <CamperReviews />}
+        </div>
+
+        {/* <Suspense fallback={null}>
           <Outlet />
-        </Suspense>
+        </Suspense> */}
       </section>
     </div>
   );

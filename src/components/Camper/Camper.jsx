@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import icons from '../../assets/icons.svg';
-import style from './Camper.module.css';
 import Badges from '../Badges/Badges.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/campers/selectors.js';
 import { toggleFavorite } from '../../redux/campers/slice.js';
+import style from './Camper.module.css';
 
 const Camper = ({ camper }) => {
   const { gallery } = camper;
@@ -29,7 +29,7 @@ const Camper = ({ camper }) => {
           <div className={style.titleWrapper}>
             <h2 className={style.camperTitle}>{camper.name}</h2>
             <div className={style.camperTitleWrap}>
-              <h2 className={style.camperTitle}>€{camper.price}</h2>
+              <h2 className={style.camperTitle}>€{camper.price}.00</h2>
               <button
                 className={style.heartBtn}
                 type="button"

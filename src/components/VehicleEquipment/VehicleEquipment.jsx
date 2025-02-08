@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import icons from '../../assets/icons.svg';
-import style from './VehicleEquipment.module.css';
 import { selectVehicleEquipmentFilter } from '../../redux/filters/selectors.js';
 import { changeEquipmentFilter } from '../../redux/filters/slice.js';
+import style from './VehicleEquipment.module.css';
 
 const VehicleEquipment = () => {
   const vehicleEquipment = useSelector(selectVehicleEquipmentFilter);

@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import Camper from '../Camper/Camper.jsx';
-import style from './CamperList.module.css';
 import {
   selectCampers,
   selectError,
@@ -8,6 +7,7 @@ import {
 } from '../../redux/campers/selectors.js';
 import Loader from '../Loader/Loader.jsx';
 import { useState } from 'react';
+import style from './CamperList.module.css';
 
 const CamperList = () => {
   const campers = useSelector(selectCampers);

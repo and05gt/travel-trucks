@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import icons from '../../assets/icons.svg';
 import CamperForm from '../CamperForm/CamperForm.jsx';
-import style from './CamperReviews.module.css';
 import {
   selectCurrentCamper,
   selectError,
   selectLoading,
 } from '../../redux/campers/selectors.js';
 import Loader from '../Loader/Loader.jsx';
+import style from './CamperReviews.module.css';
 
 const CamperReviews = () => {
   const camper = useSelector(selectCurrentCamper);

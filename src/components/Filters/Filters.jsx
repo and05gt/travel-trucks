@@ -3,9 +3,9 @@ import icons from '../../assets/icons.svg';
 import VehicleEquipment from '../VehicleEquipment/VehicleEquipment.jsx';
 import VehicleType from '../VehicleType/VehicleType.jsx';
 import { changeLocationFilter } from '../../redux/filters/slice.js';
-import style from './Filters.module.css';
 import { fetchCampers } from '../../redux/campers/operations.js';
 import { selectLocationFilter } from '../../redux/filters/selectors.js';
+import style from './Filters.module.css';
 
 const SearchBar = () => {
   const location = useSelector(selectLocationFilter);
