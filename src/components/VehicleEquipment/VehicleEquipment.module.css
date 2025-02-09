@@ -44,6 +44,7 @@
 .equipmentItem {
   position: relative;
   width: 101px;
+  height: 64px;
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -59,6 +60,7 @@
 @media screen and (min-width: 768px) {
   .equipmentItem {
     width: 112px;
+    height: 96px;
     padding: 16px;
     gap: 8px;
     font-size: 16px;
@@ -83,6 +85,7 @@
 .equipmentItemChecked {
   position: relative;
   width: 101px;
+  height: 64px;
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -99,6 +102,7 @@
 @media screen and (min-width: 768px) {
   .equipmentItemChecked {
     width: 112px;
+    height: 96px;
     padding: 16px;
     gap: 8px;
     font-size: 16px;
