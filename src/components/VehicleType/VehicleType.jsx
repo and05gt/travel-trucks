@@ -32,7 +32,7 @@ const VehicleType = () => {
               checked={vehicleType === 'panelTruck'}
               onChange={handleChangeType}
             />
-            <svg width={32} height={32}>
+            <svg className={style.typeSvg} width={16} height={16}>
               <use href={icons + '#bi_grid_1x2'}></use>
             </svg>
             Van
@@ -52,7 +52,7 @@ const VehicleType = () => {
               checked={vehicleType === 'fullyIntegrated'}
               onChange={handleChangeType}
             />
-            <svg width={32} height={32}>
+            <svg className={style.typeSvg} width={16} height={16}>
               <use href={icons + '#bi_grid'}></use>
             </svg>
             Fully Integrated
@@ -70,7 +70,7 @@ const VehicleType = () => {
               checked={vehicleType === 'alcove'}
               onChange={handleChangeType}
             />
-            <svg width={32} height={32}>
+            <svg className={style.typeSvg} width={16} height={16}>
               <use href={icons + '#bi_grid_3x3-gap'}></use>
             </svg>
             Alcove

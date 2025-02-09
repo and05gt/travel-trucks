@@ -7,7 +7,7 @@ import { fetchCampers } from '../../redux/campers/operations.js';
 import { selectLocationFilter } from '../../redux/filters/selectors.js';
 import style from './Filters.module.css';
 
-const SearchBar = () => {
+const Filters = () => {
   const location = useSelector(selectLocationFilter);
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ const SearchBar = () => {
             placeholder="City"
             onChange={handleChangeLocation}
           />
-          <svg className={style.iconMap} width={20} height={20}>
+          <svg className={style.iconMap} width={18} height={18}>
             <use href={icons + '#map'}></use>
           </svg>
         </div>
@@ -48,4 +48,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Filters;

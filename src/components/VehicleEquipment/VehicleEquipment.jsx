@@ -70,7 +70,7 @@ const VehicleEquipment = () => {
                   checked={vehicleEquipment[equipment]}
                   onChange={handleChangeEquipment}
                 />
-                <svg className={style.equipmentSvg} width={32} height={32}>
+                <svg className={style.equipmentSvg} width={26} height={26}>
                   <use href={getIcon(equipment)}></use>
                 </svg>
                 {equipment}

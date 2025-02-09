@@ -1,10 +1,10 @@
-.camperContainer {
+.camperSection {
   max-width: 1440px;
   margin: 0 auto;
   background-color: #ffffff;
 }
 
-.camperSection {
+.camperContainer {
   padding: 48px 64px 80px;
   display: flex;
   flex-direction: column;

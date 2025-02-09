@@ -34,72 +34,70 @@ const CamperPage = () => {
   if (!gallery) return <Loader />;
 
   return (
-    <div className={style.camperContainer}>
+    <main>
       <section className={style.camperSection}>
-        {loading && <Loader />}
-        {error && <h2>{error}</h2>}
-        <h2 className={style.camperTitle}>{camper.name}</h2>
-        <div className={style.detailsContainer}>
-          <div className={style.reviewsWrapper}>
-            <svg width={16} height={16}>
-              <use href={icons + '#star_pressed'}></use>
-            </svg>
-            <p>
-              {camper.rating}({camper.reviews.length} Reviews)
-            </p>
+        <div className={style.camperContainer}>
+          {loading && <Loader />}
+          {error && <h2>{error}</h2>}
+          <h2 className={style.camperTitle}>{camper.name}</h2>
+          <div className={style.detailsContainer}>
+            <div className={style.reviewsWrapper}>
+              <svg width={16} height={16}>
+                <use href={icons + '#star_pressed'}></use>
+              </svg>
+              <p>
+                {camper.rating}({camper.reviews.length} Reviews)
+              </p>
+            </div>
+            <div className={style.locationWrapper}>
+              <svg width={16} height={16}>
+                <use href={icons + '#map'}></use>
+              </svg>
+              <p>{camper.location}</p>
+            </div>
           </div>
-          <div className={style.locationWrapper}>
-            <svg width={16} height={16}>
-              <use href={icons + '#map'}></use>
-            </svg>
-            <p>{camper.location}</p>
+          <h2 className={style.camperPrice}>€{camper.price}.00</h2>
+
+          <ul className={style.camperImageList}>
+            {gallery.map((item, index) => {
+              return (
+                <li key={index}>
+                  <div className={style.camperImageItem}>
+                    <img
+                      className={style.camperImage}
+                      src={item.thumb}
+                      alt={camper.name}
+                    />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+          <p className={style.camperText}>{camper.description}</p>
+
+          <div className={style.tabsWrapper}>
+            <button
+              className={activeTab === 'features' ? style.active : style.tabBtn}
+              type="button"
+              onClick={() => handleChangeTab('features')}
+            >
+              Features
+            </button>
+            <button
+              className={activeTab === 'reviews' ? style.active : style.tabBtn}
+              type="button"
+              onClick={() => handleChangeTab('reviews')}
+            >
+              Reviews
+            </button>
+          </div>
+          <div>
+            {activeTab === 'features' ? <CamperFeatures /> : <CamperReviews />}
           </div>
         </div>
-        <h2 className={style.camperPrice}>€{camper.price}.00</h2>
-
-        <ul className={style.camperImageList}>
-          {gallery.map((item, index) => {
-            return (
-              <li key={index}>
-                <div className={style.camperImageItem}>
-                  <img
-                    className={style.camperImage}
-                    src={item.thumb}
-                    alt={camper.name}
-                  />
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-
-        <p className={style.camperText}>{camper.description}</p>
-
-        <div className={style.tabsWrapper}>
-          <button
-            className={activeTab === 'features' ? style.active : style.tabBtn}
-            type="button"
-            onClick={() => handleChangeTab('features')}
-          >
-            Features
-          </button>
-          <button
-            className={activeTab === 'reviews' ? style.active : style.tabBtn}
-            type="button"
-            onClick={() => handleChangeTab('reviews')}
-          >
-            Reviews
-          </button>
-        </div>
-        <div>
-          {activeTab === 'features' ? <CamperFeatures /> : <CamperReviews />}
-        </div>
-
-        {/* <Suspense fallback={null}>
-          <Outlet />
-        </Suspense> */}
       </section>
-    </div>
+    </main>
   );
 };
 

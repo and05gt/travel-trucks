@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import CamperList from '../../components/CamperList/CamperList.jsx';
-import SearchBar from '../../components/Filters/Filters.jsx';
+import Filters from '../../components/Filters/Filters.jsx';
 import { useEffect } from 'react';
 import { fetchCampers } from '../../redux/campers/operations.js';
 import style from './CatalogPage.module.css';
@@ -13,12 +13,14 @@ const CatalogPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={style.catalogContainer}>
+    <main>
       <section className={style.catalogSection}>
-        <SearchBar />
-        <CamperList />
+        <div className={style.catalogContainer}>
+          <Filters />
+          <CamperList />
+        </div>
       </section>
-    </div>
+    </main>
   );
 };
 
