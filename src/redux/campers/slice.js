@@ -4,7 +4,7 @@ import { fetchCampers, getCamperById } from './operations.js';
 const initialState = {
   campers: [],
   loading: false,
-  error: false,
+  error: null,
   currentCamper: {},
   favorites: [],
 };

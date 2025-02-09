@@ -1,14 +1,40 @@
 .header {
   border-bottom: 1px solid #f2f4f7;
   background-color: #f7f7f7;
-  max-width: 1440px;
+  max-width: 375px;
   margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    max-width: 1440px;
+  }
+}
+
 .headerContainer {
-  padding: 24px 64px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
-  justify-content: start;
-  gap: 450px;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .headerContainer {
+    padding: 24px 32px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .headerContainer {
+    padding: 24px 64px;
+    justify-content: start;
+    gap: 450px;
+  }
 }

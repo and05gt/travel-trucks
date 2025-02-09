@@ -4,16 +4,65 @@
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.2) 100%
     ),
-    url(../../assets/hero_desk@1x.webp);
+    url(../../assets/hero_mob@1x.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  max-width: 1440px;
-  height: 696px;
+  max-width: 375px;
+  height: 620px;
   margin: 0 auto;
 }
 
 @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .sectionHero {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      url(../../assets/hero_mob@2x.webp);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sectionHero {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      url(../../assets/hero_tab@1x.webp);
+    max-width: 768px;
+    height: 696px;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+  (min-resolution: 192dpi) and (min-width: 768px) {
+  .sectionHero {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      url(../../assets/hero_tab@2x.webp);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sectionHero {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      url(../../assets/hero_desk@1x.webp);
+    max-width: 1440px;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1440px),
+  (min-resolution: 192dpi) and (min-width: 1440px) {
   .sectionHero {
     background-image: linear-gradient(
         0deg,
@@ -25,7 +74,19 @@
 }
 
 .heroContainer {
-  padding: 260px 64px;
+  padding: 190px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .heroContainer {
+    padding: 260px 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .heroContainer {
+    padding: 260px 64px;
+  }
 }
 
 .heroTitle {
