@@ -24,7 +24,7 @@ const Camper = ({ camper }) => {
         src={gallery[0].thumb}
         alt={camper.name}
       />
-      <div className={style.camperDescription}>
+      <div className={style.camperInfo}>
         <div className={style.titleContainer}>
           <div className={style.titleWrapper}>
             <h2 className={style.camperTitle}>{camper.name}</h2>
@@ -36,11 +36,11 @@ const Camper = ({ camper }) => {
                 onClick={handleChangeFavorite}
               >
                 {isFavorite ? (
-                  <svg width={26} height={24}>
+                  <svg className={style.heartSvg} width={22} height={20}>
                     <use href={icons + '#heart_pressed'}></use>
                   </svg>
                 ) : (
-                  <svg width={26} height={24}>
+                  <svg className={style.heartSvg} width={22} height={20}>
                     <use href={icons + '#heart_default'}></use>
                   </svg>
                 )}
@@ -64,7 +64,7 @@ const Camper = ({ camper }) => {
             </div>
           </div>
         </div>
-        <p className={style.camperText}>{camper.description}</p>
+        <p className={style.camperDescription}>{camper.description}</p>
         <Badges camper={camper} />
         <Link
           className={style.showMoreBtn}

@@ -5,20 +5,20 @@ const Badges = ({ camper }) => {
   return (
     <ul className={style.badgeList}>
       <li className={style.badgeItem}>
-        <svg width={20} height={20}>
+        <svg width={18} height={18}>
           <use href={icons + '#diagram'}></use>
         </svg>
         {camper.transmission}
       </li>
       <li className={style.badgeItem}>
-        <svg width={20} height={20}>
+        <svg width={18} height={18}>
           <use href={icons + '#petrol'}></use>
         </svg>
         {camper.engine}
       </li>
       {camper.kitchen ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#cup_hot'}></use>
           </svg>
           Kitchen
@@ -28,7 +28,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.AC ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#wind'}></use>
           </svg>
           AC
@@ -38,7 +38,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.TV ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#tv'}></use>
           </svg>
           TV
@@ -48,7 +48,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.radio ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#radio'}></use>
           </svg>
           Radio
@@ -58,7 +58,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.bathroom ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#ph_shower'}></use>
           </svg>
           Bathroom
@@ -68,7 +68,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.refrigerator ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#fridge'}></use>
           </svg>
           Refrigerator
@@ -78,7 +78,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.microwave ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#microwave'}></use>
           </svg>
           Microwave
@@ -88,7 +88,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.gas ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#gas'}></use>
           </svg>
           Gas
@@ -98,7 +98,7 @@ const Badges = ({ camper }) => {
       )}
       {camper.water ? (
         <li className={style.badgeItem}>
-          <svg width={20} height={20}>
+          <svg width={18} height={18}>
             <use href={icons + '#water'}></use>
           </svg>
           Water
