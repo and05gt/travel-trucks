@@ -3,14 +3,21 @@
   font-weight: 600;
   line-height: 24px;
   color: #101828;
-  padding-bottom: 16px;
   border-bottom: 1px solid #dadde1;
+  padding-bottom: 16px;
   margin-bottom: 16px;
 }
 
 @media screen and (min-width: 768px) {
   .typeSubtitle {
     font-size: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .typeSubtitle {
     padding-bottom: 24px;
     margin-bottom: 24px;
   }
@@ -21,6 +28,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .typeWrapper {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .typeWrapper {
     margin-bottom: 40px;
   }

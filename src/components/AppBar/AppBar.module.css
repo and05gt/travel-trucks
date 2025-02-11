@@ -27,7 +27,8 @@
 @media screen and (min-width: 768px) {
   .headerContainer {
     padding: 24px 32px;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 154px;
   }
 }
 

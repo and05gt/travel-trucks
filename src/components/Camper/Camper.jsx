@@ -65,7 +65,10 @@ const Camper = ({ camper }) => {
           </div>
         </div>
         <p className={style.camperDescription}>{camper.description}</p>
-        <Badges camper={camper} />
+        <div className={style.badgesWrapper}>
+          <Badges camper={camper} />
+        </div>
+
         <Link
           className={style.showMoreBtn}
           to={`/catalog/${camper.id}`}

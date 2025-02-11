@@ -12,6 +12,12 @@
 
 @media screen and (min-width: 768px) {
   .camperList {
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperList {
     gap: 32px;
   }
 }
@@ -37,6 +43,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .loadMoreBtn {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .loadMoreBtn {
     padding: 16px 32px;
     font-size: 16px;

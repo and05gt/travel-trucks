@@ -15,6 +15,12 @@
     padding: 24px;
     flex-direction: row;
     gap: 24px;
+    width: 704px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperWrapper {
     width: 888px;
   }
 }
@@ -27,6 +33,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .camperImg {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .camperImg {
     width: 292px;
   }
@@ -42,8 +54,15 @@
 @media screen and (min-width: 768px) {
   .camperInfo {
     justify-content: space-between;
+    gap: 12px;
+    max-width: 402px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperInfo {
+    gap: 24px;
     max-width: 524px;
-    height: 320px;
   }
 }
 
@@ -64,13 +83,15 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 4px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
   .titleWrapper {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
   }
 }
 
@@ -94,12 +115,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-}
-
-@media screen and (min-width: 768px) {
-  .camperTitleWrap {
-    gap: 12px;
-  }
 }
 
 .heartBtn {
@@ -126,6 +141,7 @@
 
 @media screen and (min-width: 768px) {
   .detailsContainer {
+    justify-content: start;
     gap: 16px;
   }
 }
@@ -181,16 +197,33 @@
   line-height: 18px;
   color: #475467;
   max-width: 303px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 768px) {
   .camperDescription {
     font-size: 16px;
     line-height: 24px;
+    max-width: 402px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperDescription {
     max-width: 525px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  }
+}
+
+.badgesWrapper {
+  height: 74px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .badgesWrapper {
+    height: 104px;
   }
 }
 
