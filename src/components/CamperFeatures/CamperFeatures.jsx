@@ -32,8 +32,8 @@ const CamperFeatures = () => {
   };
 
   return (
-    <div className={style.featuresContainer}>
-      <div className={style.featuresSection}>
+    <div className={style.featuresSection}>
+      <div className={style.featuresContainer}>
         {loading && <Loader />}
         {error && <h2>{error}</h2>}
         <Badges camper={camper} />

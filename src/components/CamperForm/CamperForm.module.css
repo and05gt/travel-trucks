@@ -1,11 +1,20 @@
 .formContainer {
-  width: 641px;
-  padding: 44px 57px;
+  width: 335px;
+  padding: 16px 20px;
   border-radius: 10px;
   border: 1px solid #dadde1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .formContainer {
+    width: 641px;
+    padding: 44px 57px;
+    gap: 24px;
+  }
 }
 
 .formWrapper {
@@ -26,7 +35,7 @@
 }
 
 .formInput {
-  width: 527px;
+  width: 303px;
   padding: 18px;
   border: none;
   outline: none;
@@ -37,13 +46,21 @@
   color: #101828;
 }
 
+@media screen and (min-width: 768px) {
+  .formInput {
+    width: 527px;
+    padding: 18px;
+    margin-bottom: 14px;
+  }
+}
+
 .formInput::placeholder {
   font-weight: 400;
   color: #6c717b;
 }
 
 .formComment {
-  width: 527px;
+  width: 303px;
   height: 118px;
   padding: 18px;
   border: none;
@@ -54,6 +71,15 @@
   font-weight: 400;
   color: #101828;
   resize: none;
+}
+
+@media screen and (min-width: 768px) {
+  .formComment {
+    width: 527px;
+    height: 118px;
+    padding: 18px;
+    margin-bottom: 24px;
+  }
 }
 
 .formComment::placeholder {
