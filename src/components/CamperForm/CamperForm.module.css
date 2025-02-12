@@ -5,11 +5,18 @@
   border: 1px solid #dadde1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
 }
 
 @media screen and (min-width: 768px) {
+  .formContainer {
+    width: 704px;
+    padding: 32px 88px;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .formContainer {
     width: 641px;
     padding: 44px 57px;
@@ -50,7 +57,7 @@
 }
 
 .formInput {
-  width: 303px;
+  width: 295px;
   padding: 14px;
   border: none;
   outline: none;
@@ -65,11 +72,17 @@
 
 @media screen and (min-width: 768px) {
   .formInput {
-    width: 527px;
+    width: 528px;
     padding: 18px;
     margin-bottom: 14px;
     font-size: 16px;
     line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .formInput {
+    width: 527px;
   }
 }
 
@@ -79,7 +92,7 @@
 }
 
 .formComment {
-  width: 303px;
+  width: 295px;
   height: 86px;
   padding: 14px;
   border: none;

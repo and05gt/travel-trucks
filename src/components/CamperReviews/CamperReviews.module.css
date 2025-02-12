@@ -6,7 +6,12 @@
 
 @media screen and (min-width: 768px) {
   .reviewsContainer {
-    display: flex;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .reviewsContainer {
     flex-direction: row;
     gap: 40px;
   }
@@ -21,6 +26,13 @@
 }
 
 @media screen and (min-width: 768px) {
+  .reviewsList {
+    width: 704px;
+    gap: 28px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .reviewsList {
     width: 631px;
     gap: 44px;

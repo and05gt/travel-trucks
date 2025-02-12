@@ -6,6 +6,12 @@
 
 @media screen and (min-width: 768px) {
   .featuresSection {
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .featuresSection {
     flex-direction: row;
     gap: 40px;
   }
@@ -22,6 +28,14 @@
 }
 
 @media screen and (min-width: 768px) {
+  .featuresContainer {
+    width: 704px;
+    padding: 44px 86px;
+    gap: 56px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .featuresContainer {
     width: 631px;
     padding: 44px 52px;
@@ -73,7 +87,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .infoTextForm {
+  .infoTextForm,
+  .infoText {
     font-size: 16px;
     line-height: 24px;
   }

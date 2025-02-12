@@ -122,6 +122,12 @@
 @media screen and (min-width: 768px) {
   .camperPrice {
     font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperPrice {
     margin-bottom: 28px;
   }
 }
@@ -136,6 +142,18 @@
 @media screen and (min-width: 768px) {
   .camperImageList {
     flex-direction: row;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperImageList {
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperImageList {
     gap: 48px;
     margin-bottom: 28px;
   }
@@ -157,6 +175,13 @@
 }
 
 @media screen and (min-width: 768px) {
+  .camperImageItem {
+    width: 224px;
+    height: 262px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .camperImageItem {
     width: 292px;
     height: 312px;
@@ -180,6 +205,12 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .camperText {
     margin-bottom: 60px;
   }
 }
@@ -192,6 +223,13 @@
 }
 
 @media screen and (min-width: 768px) {
+  .tabsWrapper {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .tabsWrapper {
     gap: 40px;
     margin-bottom: 44px;
@@ -213,14 +251,21 @@
   font-weight: 600;
   line-height: 24px;
   display: block;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
   .tabBtn,
   .active {
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     font-size: 20px;
-    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .tabBtn,
+  .active {
+    padding-bottom: 24px;
   }
 }
 
