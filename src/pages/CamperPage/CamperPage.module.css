@@ -66,6 +66,13 @@
   align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+  .reviewsWrapper svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .reviewsWrapper p {
   font-size: 14px;
   font-weight: 400;

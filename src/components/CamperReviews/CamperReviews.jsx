@@ -21,7 +21,7 @@ const CamperReviews = () => {
 
     for (let i = 0; i < rating; i += 1) {
       stars.push(
-        <svg width={16} height={16}>
+        <svg key={i} width={14} height={14}>
           <use href={icons + '#star_pressed'}></use>
         </svg>,
       );
@@ -29,7 +29,7 @@ const CamperReviews = () => {
 
     for (let i = rating; i < 5; i += 1) {
       stars.push(
-        <svg width={16} height={16}>
+        <svg key={i} width={14} height={14}>
           <use href={icons + '#star_default'}></use>
         </svg>,
       );

@@ -1,47 +1,101 @@
 .reviewsContainer {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
 }
 
 .reviewsList {
   display: flex;
-  width: 631px;
+  width: 335px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 44px;
-  margin-top: 12px;
+  gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsList {
+    width: 631px;
+    gap: 44px;
+    margin-top: 12px;
+  }
 }
 
 .reviewsItem {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsItem {
+    gap: 16px;
+  }
 }
 
 .reviewsItemHeader {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsItemHeader {
+    gap: 16px;
+  }
 }
 
 .reviewsImg {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
   border-radius: 60px;
   background-color: #f2f4f7;
   color: #e44848;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsImg {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
 }
 
 .reviewsAuthorWrap {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsAuthorWrap {
+    gap: 4px;
+  }
+}
+
+.reviewsAuthorWrap p {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsAuthorWrap p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .reviewsStarsList {
@@ -50,7 +104,23 @@
   gap: 4px;
 }
 
+@media screen and (min-width: 768px) {
+  .reviewsStarsList svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 .reviewsText {
+  font-size: 14px;
   font-weight: 400;
+  line-height: 18px;
   color: #475467;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewsText {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

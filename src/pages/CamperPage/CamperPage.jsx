@@ -42,7 +42,7 @@ const CamperPage = () => {
           <h2 className={style.camperTitle}>{camper.name}</h2>
           <div className={style.detailsContainer}>
             <div className={style.reviewsWrapper}>
-              <svg width={16} height={16}>
+              <svg width={14} height={14}>
                 <use href={icons + '#star_pressed'}></use>
               </svg>
               <p>
