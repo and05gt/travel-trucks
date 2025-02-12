@@ -14,63 +14,67 @@
 .featuresContainer {
   display: flex;
   width: 335px;
-  padding: 44px 52px;
+  padding: 32px 20px;
   flex-direction: column;
-  gap: 100px;
+  gap: 32px;
   border-radius: 10px;
   background-color: #f7f7f7;
 }
 
 @media screen and (min-width: 768px) {
   .featuresContainer {
-    display: flex;
     width: 631px;
     padding: 44px 52px;
-    flex-direction: column;
     gap: 100px;
-    border-radius: 10px;
-    background-color: #f7f7f7;
   }
 }
 
-.featuresBadgesList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.featuresBadgesItem {
-  display: flex;
-  height: 48px;
-  padding: 12px 18px;
-  align-items: center;
-  gap: 8px;
-  border-radius: 100px;
-  background-color: #f2f4f7;
-  mix-blend-mode: multiply;
-  text-transform: capitalize;
-}
-
 .featuresSubtitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   border-bottom: 1px solid #dadde1;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .featuresSubtitle {
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .featuresSubtitle {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .infoWrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
-.infoTextForm {
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 768px) {
+  .infoWrapper {
+    gap: 16px;
+  }
 }
 
+.infoTextForm,
 .infoText {
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .infoTextForm {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

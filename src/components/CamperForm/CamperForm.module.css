@@ -1,12 +1,12 @@
 .formContainer {
   width: 335px;
-  padding: 16px 20px;
+  padding: 28px 20px;
   border-radius: 10px;
   border: 1px solid #dadde1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -25,24 +25,41 @@
 }
 
 .formTitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 
+@media screen and (min-width: 768px) {
+  .formTitle {
+    font-size: 20px;
+  }
+}
+
 .formSubtitle {
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 400;
   color: #6c717b;
 }
 
+@media screen and (min-width: 768px) {
+  .formSubtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 .formInput {
   width: 303px;
-  padding: 18px;
+  padding: 14px;
   border: none;
   outline: none;
   border-radius: 12px;
   background-color: #f7f7f7;
   margin-bottom: 14px;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 18px;
   color: #101828;
 }
 
@@ -51,6 +68,8 @@
     width: 527px;
     padding: 18px;
     margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -61,14 +80,16 @@
 
 .formComment {
   width: 303px;
-  height: 118px;
-  padding: 18px;
+  height: 86px;
+  padding: 14px;
   border: none;
   outline: none;
   border-radius: 10px;
   background-color: #f7f7f7;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 18px;
   color: #101828;
   resize: none;
 }
@@ -79,32 +100,42 @@
     height: 118px;
     padding: 18px;
     margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
 .formComment::placeholder {
-  font-weight: 400;
   color: #6c717b;
 }
 
 .formBtn {
-  width: 166px;
+  width: 142px;
   cursor: pointer;
-  padding: 16px 63px;
+  padding: 14px 53px;
   border: none;
   outline: none;
   border-radius: 200px;
   background-color: #e44848;
   color: #ffffff;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 150% */
+  line-height: 18px;
   letter-spacing: -0.08px;
   display: block;
   margin: 0 auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .formBtn {
+    width: 166px;
+    padding: 16px 63px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .formBtn:focus,
