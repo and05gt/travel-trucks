@@ -74,9 +74,6 @@
 }
 
 .reviewsWrapper p {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
@@ -98,16 +95,9 @@
   align-items: center;
 }
 
-.locationWrapper p {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-}
-
 @media screen and (min-width: 768px) {
   .locationWrapper p {
     font-size: 16px;
-    font-weight: 400;
     line-height: 24px;
   }
 }
@@ -193,9 +183,6 @@
 }
 
 .camperText {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
   color: #475467;
   margin-bottom: 28px;
 }
@@ -203,7 +190,6 @@
 @media screen and (min-width: 768px) {
   .camperText {
     font-size: 16px;
-    font-weight: 400;
     line-height: 24px;
     margin-bottom: 40px;
   }
