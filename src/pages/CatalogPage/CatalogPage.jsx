@@ -6,18 +6,22 @@ import { fetchCampers } from '../../redux/campers/operations.js';
 import style from './CatalogPage.module.css';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn.jsx';
 import { selectPage, selectTotal } from '../../redux/campers/selectors.js';
+import { selectFilters } from '../../redux/filters/selectors.js';
 import { changePage } from '../../redux/campers/slice.js';
+import { setQueryParams } from '../../utils/setQueryParams.js';
 
 const CatalogPage = () => {
+  const filters = useSelector(selectFilters);
   const total = useSelector(selectTotal);
   const page = useSelector(selectPage);
   const dispatch = useDispatch();
 
   const totalPages = Math.ceil(total / 4);
+  const queryParams = setQueryParams(filters);
 
   useEffect(() => {
-    dispatch(fetchCampers(page));
-  }, [dispatch, page]);
+    dispatch(fetchCampers({ page, queryParams }));
+  }, [dispatch, page, queryParams]);
 
   const handleChangePage = () => {
     dispatch(changePage());
