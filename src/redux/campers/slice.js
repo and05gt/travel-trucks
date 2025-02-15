@@ -7,6 +7,8 @@ const initialState = {
   error: null,
   currentCamper: {},
   favorites: [],
+  page: 1,
+  total: 0,
 };
 
 const slice = createSlice({
@@ -24,11 +26,20 @@ const slice = createSlice({
         state.favorites.push(action.payload);
       }
     },
+    changePage: (state) => {
+      state.page += 1;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        state.campers = action.payload;
+        state.total = action.payload.total;
+
+        if (state.page > 1) {
+          state.campers = [...state.campers, ...action.payload.items];
+        } else {
+          state.campers = action.payload.items;
+        }
       })
       .addCase(getCamperById.fulfilled, (state, action) => {
         state.currentCamper = action.payload;
@@ -55,5 +66,5 @@ const slice = createSlice({
   },
 });
 
-export const { toggleFavorite } = slice.actions;
+export const { toggleFavorite, changePage } = slice.actions;
 export const campersReducer = slice.reducer;

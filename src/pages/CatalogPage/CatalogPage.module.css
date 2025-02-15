@@ -37,3 +37,9 @@
     gap: 64px;
   }
 }
+
+.catalogListWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
