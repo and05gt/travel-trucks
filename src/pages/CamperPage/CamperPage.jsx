@@ -12,6 +12,7 @@ import Loader from '../../components/Loader/Loader.jsx';
 import CamperReviews from '../../components/CamperReviews/CamperReviews.jsx';
 import CamperFeatures from '../../components/CamperFeatures/CamperFeatures.jsx';
 import style from './CamperPage.module.css';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage.jsx';
 
 const CamperPage = () => {
   const { id } = useParams();
@@ -31,14 +32,14 @@ const CamperPage = () => {
 
   const { gallery } = camper;
 
-  if (!gallery) return <Loader />;
+  if (!gallery) return <ErrorMessage />;
 
   return (
     <main>
       <section className={style.camperSection}>
         <div className={style.camperContainer}>
           {loading && <Loader />}
-          {error && <h2>{error}</h2>}
+          {error && <ErrorMessage />}
           <h2 className={style.camperTitle}>{camper.name}</h2>
           <div className={style.detailsContainer}>
             <div className={style.reviewsWrapper}>

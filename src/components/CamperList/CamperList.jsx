@@ -7,6 +7,7 @@ import {
 } from '../../redux/campers/selectors.js';
 import Loader from '../Loader/Loader.jsx';
 import style from './CamperList.module.css';
+import ErrorMessage from '../ErrorMessage/ErrorMessage.jsx';
 
 const CamperList = () => {
   const campers = useSelector(selectCampers);
@@ -16,7 +17,7 @@ const CamperList = () => {
   return (
     <>
       {loading && <Loader />}
-      {error && <h2>{error}</h2>}
+      {error && <ErrorMessage />}
       <ul className={style.camperList}>
         {campers?.map((camper) => {
           return (
