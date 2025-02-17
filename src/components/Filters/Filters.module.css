@@ -296,8 +296,20 @@
   border: 1px solid #e44848;
 }
 
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .btnWrapper {
+  }
+}
+
 .searchBtn {
   width: 136px;
+  height: 46px;
   padding: 14px 44px;
   cursor: pointer;
   border: none;
@@ -311,12 +323,14 @@
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.08px;
+  display: block;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media screen and (min-width: 768px) {
   .searchBtn {
     width: 166px;
+    height: 56px;
     padding: 16px 56.5px;
     font-size: 16px;
     line-height: 24px;
@@ -326,4 +340,39 @@
 .searchBtn:focus,
 .searchBtn:hover {
   background-color: #d84343;
+}
+
+.resetBtn {
+  width: 136px;
+  height: 46px;
+  padding: 14px 44px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #dadde1;
+  background-color: transparent;
+  border-radius: 200px;
+  color: #101828;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.08px;
+  display: block;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .resetBtn {
+    width: 166px;
+    height: 56px;
+    padding: 16px 56.5px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.resetBtn:focus,
+.resetBtn:hover {
+  border: 1px solid #d84343;
 }
