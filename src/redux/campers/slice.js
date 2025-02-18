@@ -5,7 +5,7 @@ const initialState = {
   campers: [],
   loading: false,
   error: null,
-  currentCamper: {},
+  currentCamper: null,
   favorites: [],
   page: 1,
   total: 0,

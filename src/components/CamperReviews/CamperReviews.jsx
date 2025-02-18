@@ -1,18 +1,11 @@
 import { useSelector } from 'react-redux';
 import icons from '../../assets/icons.svg';
 import CamperForm from '../CamperForm/CamperForm.jsx';
-import {
-  selectCurrentCamper,
-  selectError,
-  selectLoading,
-} from '../../redux/campers/selectors.js';
-import Loader from '../Loader/Loader.jsx';
+import { selectCurrentCamper } from '../../redux/campers/selectors.js';
 import style from './CamperReviews.module.css';
 
 const CamperReviews = () => {
   const camper = useSelector(selectCurrentCamper);
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
 
   const { reviews } = camper;
 
@@ -40,8 +33,6 @@ const CamperReviews = () => {
 
   return (
     <div className={style.reviewsContainer}>
-      {loading && <Loader />}
-      {error && <h2>{error}</h2>}
       <ul className={style.reviewsList}>
         {reviews.map((review, index) => {
           return (

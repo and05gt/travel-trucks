@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
-import Camper from '../Camper/Camper.jsx';
+import CamperItem from '../CamperItem/CamperItem.jsx';
 import {
   selectCampers,
   selectError,
   selectLoading,
 } from '../../redux/campers/selectors.js';
 import Loader from '../Loader/Loader.jsx';
-import style from './CamperList.module.css';
 import ErrorMessage from '../ErrorMessage/ErrorMessage.jsx';
+import style from './CamperList.module.css';
 
 const CamperList = () => {
   const campers = useSelector(selectCampers);
@@ -22,7 +22,7 @@ const CamperList = () => {
         {campers?.map((camper) => {
           return (
             <li key={camper.id}>
-              <Camper camper={camper} />
+              <CamperItem camper={camper} />
             </li>
           );
         })}

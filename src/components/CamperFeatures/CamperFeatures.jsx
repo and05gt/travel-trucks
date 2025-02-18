@@ -1,18 +1,11 @@
 import CamperForm from '../CamperForm/CamperForm.jsx';
 import { useSelector } from 'react-redux';
-import {
-  selectCurrentCamper,
-  selectError,
-  selectLoading,
-} from '../../redux/campers/selectors.js';
-import Loader from '../Loader/Loader.jsx';
+import { selectCurrentCamper } from '../../redux/campers/selectors.js';
 import Badges from '../Badges/Badges.jsx';
 import style from './CamperFeatures.module.css';
 
 const CamperFeatures = () => {
   const camper = useSelector(selectCurrentCamper);
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
 
   const getForm = (name) => {
     let form = '';
@@ -31,11 +24,11 @@ const CamperFeatures = () => {
     return form;
   };
 
+  if (!camper) return;
+
   return (
     <div className={style.featuresSection}>
       <div className={style.featuresContainer}>
-        {loading && <Loader />}
-        {error && <h2>{error}</h2>}
         <Badges camper={camper} />
         <div>
           <h3 className={style.featuresSubtitle}>Vehicle details</h3>

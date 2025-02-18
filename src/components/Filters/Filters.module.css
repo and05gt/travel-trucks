@@ -1,4 +1,4 @@
-.searchBarWrapper {
+.filtersContainer {
   display: flex;
   flex-direction: column;
 }
@@ -26,19 +26,19 @@
   }
 }
 
-.inputWrapper {
+.searchWrapper {
   position: relative;
   margin-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
-  .inputWrapper {
+  .searchWrapper {
     margin-bottom: 32px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .inputWrapper {
+  .searchWrapper {
     margin-bottom: 40px;
   }
 }
@@ -132,7 +132,7 @@
 }
 
 .filtersWrapper {
-  width: 360px;
+  width: 335px;
   margin-bottom: 16px;
 }
 

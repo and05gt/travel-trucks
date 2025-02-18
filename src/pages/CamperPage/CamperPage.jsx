@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import icons from '../../assets/icons.svg';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCamperById } from '../../redux/campers/operations.js';
@@ -9,10 +8,11 @@ import {
   selectLoading,
 } from '../../redux/campers/selectors.js';
 import Loader from '../../components/Loader/Loader.jsx';
+import Camper from '../../components/Camper/Camper.jsx';
 import CamperReviews from '../../components/CamperReviews/CamperReviews.jsx';
 import CamperFeatures from '../../components/CamperFeatures/CamperFeatures.jsx';
-import style from './CamperPage.module.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage.jsx';
+import style from './CamperPage.module.css';
 
 const CamperPage = () => {
   const { id } = useParams();
@@ -30,72 +30,38 @@ const CamperPage = () => {
     setActiveTab(tab);
   };
 
-  const { gallery } = camper;
-
-  if (!gallery) return <ErrorMessage />;
-
   return (
     <main>
       <section className={style.camperSection}>
         <div className={style.camperContainer}>
           {loading && <Loader />}
           {error && <ErrorMessage />}
-          <h2 className={style.camperTitle}>{camper.name}</h2>
-          <div className={style.detailsContainer}>
-            <div className={style.reviewsWrapper}>
-              <svg width={14} height={14}>
-                <use href={icons + '#star_pressed'}></use>
-              </svg>
-              <p>
-                {camper.rating}({camper.reviews.length} Reviews)
-              </p>
+          {camper && (
+            <div>
+              <Camper camper={camper} />
+              <div className={style.tabsWrapper}>
+                <button
+                  className={
+                    activeTab === 'features' ? style.active : style.tabBtn
+                  }
+                  type="button"
+                  onClick={() => handleChangeTab('features')}
+                >
+                  Features
+                </button>
+                <button
+                  className={
+                    activeTab === 'reviews' ? style.active : style.tabBtn
+                  }
+                  type="button"
+                  onClick={() => handleChangeTab('reviews')}
+                >
+                  Reviews
+                </button>
+              </div>
             </div>
-            <div className={style.locationWrapper}>
-              <svg width={16} height={16}>
-                <use href={icons + '#map'}></use>
-              </svg>
-              <p>{camper.location}</p>
-            </div>
-          </div>
-          <h2 className={style.camperPrice}>€{camper.price}.00</h2>
-
-          <ul className={style.camperImageList}>
-            {gallery.map((item, index) => {
-              return (
-                <li key={index}>
-                  <div className={style.camperImageItem}>
-                    <img
-                      className={style.camperImage}
-                      src={item.thumb}
-                      alt={camper.name}
-                    />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-
-          <p className={style.camperText}>{camper.description}</p>
-
-          <div className={style.tabsWrapper}>
-            <button
-              className={activeTab === 'features' ? style.active : style.tabBtn}
-              type="button"
-              onClick={() => handleChangeTab('features')}
-            >
-              Features
-            </button>
-            <button
-              className={activeTab === 'reviews' ? style.active : style.tabBtn}
-              type="button"
-              onClick={() => handleChangeTab('reviews')}
-            >
-              Reviews
-            </button>
-          </div>
-          <div>
-            {activeTab === 'features' ? <CamperFeatures /> : <CamperReviews />}
-          </div>
+          )}
+          {activeTab === 'features' ? <CamperFeatures /> : <CamperReviews />}
         </div>
       </section>
     </main>

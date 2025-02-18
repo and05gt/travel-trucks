@@ -13,7 +13,7 @@ export const fetchCampers = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.status === 404) {
-        return thunkAPI.rejectWithValue('Not found campers');
+        return thunkAPI.rejectWithValue('Not found campers!');
       }
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -28,7 +28,7 @@ export const getCamperById = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.status === 404) {
-        return thunkAPI.rejectWithValue('Not found camper');
+        return thunkAPI.rejectWithValue('Not found camper!');
       }
       return thunkAPI.rejectWithValue(error.message);
     }

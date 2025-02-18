@@ -23,13 +23,13 @@ const Filters = () => {
   };
 
   return (
-    <div className={style.searchBarWrapper}>
+    <div className={style.filtersContainer}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ values }) => (
           <Form>
             <label className={style.searchLabel} htmlFor="location">
               <span>Location</span>
-              <div className={style.inputWrapper}>
+              <div className={style.searchWrapper}>
                 <Field
                   className={style.searchInput}
                   id="location"
