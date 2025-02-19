@@ -1,4 +1,4 @@
-.formContainer {
+.formSection {
   width: 335px;
   padding: 28px 20px;
   border-radius: 10px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .formContainer {
+  .formSection {
     width: 704px;
     padding: 32px 88px;
     gap: 20px;
@@ -17,7 +17,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .formContainer {
+  .formSection {
     width: 641px;
     padding: 44px 57px;
     gap: 24px;
@@ -53,6 +53,12 @@
   }
 }
 
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .formInput {
   width: 295px;
   padding: 14px;
@@ -60,14 +66,12 @@
   outline: none;
   border-radius: 12px;
   background-color: #f7f7f7;
-  margin-bottom: 14px;
 }
 
 @media screen and (min-width: 768px) {
   .formInput {
     width: 528px;
     padding: 18px;
-    margin-bottom: 14px;
     font-size: 16px;
     line-height: 24px;
   }
@@ -81,6 +85,10 @@
 
 .formInput::placeholder {
   color: #6c717b;
+}
+
+.formError {
+  color: #e44848;
 }
 
 .formComment {
