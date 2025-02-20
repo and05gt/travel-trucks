@@ -6,6 +6,7 @@ import './DatePicker.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import style from './CamperForm.module.css';
+import { useState } from 'react';
 
 const initialValues = {
   name: '',
@@ -27,6 +28,8 @@ const formSchema = Yup.object().shape({
 });
 
 const CamperForm = () => {
+  const [text, setText] = useState('Booking date*');
+
   const handleSubmit = (values, options) => {
     iziToast.success({
       title: 'Ok',
@@ -39,6 +42,9 @@ const CamperForm = () => {
     });
     options.resetForm();
   };
+
+  const handleCalendarClose = () => setText('Booking date*');
+  const handleCalendarOpen = () => setText('Select a date between today');
 
   return (
     <div className={style.formSection}>
@@ -82,16 +88,17 @@ const CamperForm = () => {
               />
             </label>
             <label>
-              <Field type="text" name="date">
+              <Field type="date" name="date">
                 {({ field, form }) => (
                   <DatePicker
                     {...field}
                     selected={field.value ? new Date(field.value) : null}
                     onChange={(date) => form.setFieldValue('date', date)}
-                    // minDate={new Date()}
                     dateFormat="dd.MM.yyyy"
                     shouldCloseOnSelect={true}
-                    placeholderText="Booking date*"
+                    onCalendarClose={handleCalendarClose}
+                    onCalendarOpen={handleCalendarOpen}
+                    placeholderText={text}
                     className={style.formInput}
                   />
                 )}
