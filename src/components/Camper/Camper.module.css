@@ -139,6 +139,7 @@
   .camperImageItem {
     width: 292px;
     height: 312px;
+    cursor: zoom-in;
   }
 }
 

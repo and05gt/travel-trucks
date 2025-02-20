@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import icons from '../../assets/icons.svg';
 import style from './Camper.module.css';
+import ImageModal from '../ImageModal/ImageModal.jsx';
 
 const Camper = ({ camper }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <>
       <h2 className={style.camperTitle}>{camper.name}</h2>
@@ -32,12 +44,16 @@ const Camper = ({ camper }) => {
                   className={style.camperImage}
                   src={item.thumb}
                   alt={camper.name}
+                  onClick={() => openModal(item.original)}
                 />
               </div>
             </li>
           );
         })}
       </ul>
+      {selectedImage && (
+        <ImageModal image={selectedImage} closeModal={closeModal} />
+      )}
 
       <p className={style.camperText}>{camper.description}</p>
     </>

@@ -95,6 +95,7 @@ const CamperForm = () => {
                     selected={field.value ? new Date(field.value) : null}
                     onChange={(date) => form.setFieldValue('date', date)}
                     dateFormat="dd.MM.yyyy"
+                    minDate={new Date()}
                     shouldCloseOnSelect={true}
                     onCalendarClose={handleCalendarClose}
                     onCalendarOpen={handleCalendarOpen}
