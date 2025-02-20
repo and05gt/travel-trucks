@@ -48,12 +48,14 @@ const slice = createSlice({
         isAnyOf(fetchCampers.pending, getCamperById.pending),
         (state) => {
           state.loading = true;
+          state.error = null;
         },
       )
       .addMatcher(
         isAnyOf(fetchCampers.fulfilled, getCamperById.fulfilled),
         (state) => {
           state.loading = false;
+          state.error = null;
         },
       )
       .addMatcher(
