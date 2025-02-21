@@ -6,6 +6,7 @@ import style from './Filters.module.css';
 
 const initialValues = {
   location: '',
+  transmission: '',
   vehicleEquipment: [],
   vehicleType: '',
 };
@@ -14,7 +15,14 @@ const Filters = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, options) => {
-    dispatch(changeFilters(values));
+    dispatch(
+      changeFilters({
+        ...values,
+        transmission: values.transmission.includes('automatic')
+          ? 'automatic'
+          : '',
+      }),
+    );
     options.resetForm();
   };
 
@@ -66,7 +74,7 @@ const Filters = () => {
                     className={style.filtersInput}
                     id="automatic"
                     type="checkbox"
-                    name="vehicleEquipment"
+                    name="transmission"
                     value="automatic"
                   />
                   <label htmlFor="automatic" className={style.filtersLabel}>

@@ -5,6 +5,10 @@ export const setQueryParams = (filters) => {
     queryParams.push(`location=${filters.location}`);
   }
 
+  if (filters.transmission) {
+    queryParams.push(`transmission=${filters.transmission}`);
+  }
+
   filters.vehicleEquipment?.forEach((equipment) => {
     queryParams.push(`${equipment}=${true}`);
   });
